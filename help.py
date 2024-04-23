@@ -40,5 +40,5 @@ help_handler = ConversationHandler(
         1: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask)]
     },
 
-    fallbacks=[CommandHandler('stop', stop)]
+    fallbacks=[MessageHandler(filters.COMMAND, stop)]
 )
