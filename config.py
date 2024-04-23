@@ -10,4 +10,9 @@ START_EXERCISE_BUTTON = "Случайное задание 🎲"
 START_INFO_BUTTON = "Расскажи о заданиях 📖"
 
 START_BUTTONS = [[START_ADVICE_BUTTON, START_EXERCISE_BUTTON],
-           [START_INFO_BUTTON, START_HELP_BUTTON]]
+                 [START_INFO_BUTTON, START_HELP_BUTTON]]
+
+ADVICE_TEXT_1 = """<b>Нужна помощь? 🆘</b>
+Отправь сообщение и его увидят модераторы:
+<i>Для отмены напиши /stop</i>"""
+ADVICE_TEXT_2 = """<i>Сообщение успешно отправлено!</i> ✅"""
