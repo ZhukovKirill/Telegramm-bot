@@ -4,13 +4,13 @@ from config import *
 
 
 async def help(update: Update, context):
-    markup = ReplyKeyboardMarkup([['/stop']], one_time_keyboard=True)
+    markup = ReplyKeyboardMarkup([['/stop']], one_time_keyboard=True, resize_keyboard=True)
     await update.message.reply_html(HELP_TEXT_START, reply_markup=markup)
     return 1
 
 
 async def ask(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    markup = ReplyKeyboardMarkup(START_BUTTONS, one_time_keyboard=False)
+    markup = ReplyKeyboardMarkup(START_BUTTONS, one_time_keyboard=False, resize_keyboard=True)
     await update.message.reply_html(HELP_TEXT_ASK, reply_markup=markup)
 
     await context.bot.send_message(ANTON_ID, HELP_TEXT_REPLY % (
@@ -26,7 +26,7 @@ async def ask(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 async def stop(update: Update, context):
-    markup = ReplyKeyboardMarkup(START_BUTTONS, one_time_keyboard=False)
+    markup = ReplyKeyboardMarkup(START_BUTTONS, one_time_keyboard=False, resize_keyboard=True)
     await update.message.reply_html(HELP_TEXT_STOP, reply_markup=markup)
     return ConversationHandler.END
 

@@ -4,7 +4,7 @@ from config import *
 
 
 async def other(update: Update, context):
-    markup = ReplyKeyboardMarkup(START_BUTTONS, one_time_keyboard=False)
+    markup = ReplyKeyboardMarkup(START_BUTTONS, one_time_keyboard=False, resize_keyboard=True)
     await update.message.reply_html(OTHER_TEXT, reply_markup=markup)
 
 
