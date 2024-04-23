@@ -17,10 +17,10 @@ async def ask(update: Update, context: ContextTypes.DEFAULT_TYPE):
         update.effective_user.id,
         update.message.text
     ), parse_mode="html")
-    """await context.bot.send_message(KIRILL_ID, HELP_REPLY_TEXT_1 % (
-        update.effective_user.username,
+    await context.bot.send_message(KIRILL_ID, HELP_TEXT_REPLY % (
+        update.effective_user.id,
         update.message.text
-    ), parse_mode="html")"""
+    ), parse_mode="html")
 
     return ConversationHandler.END
 
