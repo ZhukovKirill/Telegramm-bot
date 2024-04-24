@@ -1,5 +1,5 @@
 from telegram import Update, ReplyKeyboardMarkup
-from telegram.ext import Application, MessageHandler, filters, CommandHandler, ConversationHandler
+from telegram.ext import Application, MessageHandler, filters, CommandHandler, ConversationHandler, ContextTypes
 from config import *
 
 from start import start_handler
@@ -11,8 +11,14 @@ from info import info_handler
 from other import other_handler
 
 
+async def photo(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    print(update.message.photo[-1].file_id)
+
+
 def main():
     application = Application.builder().token(BOT_TOKEN).build()
+
+    # application.add_handler(MessageHandler(filters.PHOTO, photo))
 
     application.add_handler(start_handler)
     application.add_handler(advice_handler)
