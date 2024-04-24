@@ -7,7 +7,7 @@ from advice import advice_handler
 from exercise import exercise_handler
 from help import help_handler
 from help_reply import help_reply_handler
-from info import info_handler
+from info import info_handler, info_buttons_handler
 from other import other_handler
 
 
@@ -24,6 +24,7 @@ def main():
     application.add_handler(advice_handler)
     application.add_handler(exercise_handler)
     application.add_handler(info_handler)
+    application.add_handler(info_buttons_handler)
     application.add_handler(help_handler)
     application.add_handler(help_reply_handler)
     application.add_handler(other_handler)

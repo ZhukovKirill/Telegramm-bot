@@ -5,8 +5,8 @@ import sqlite3
 
 
 async def advice(update: Update, context):
-    number, description, advice, image = get_advice()
-    text = ADVICE_TEXT % (number, description, advice)
+    number, name, advice, image = get_advice()
+    text = ADVICE_TEXT % (number, name, advice)
     if image is None:
         await update.message.reply_html(text)
     else:
@@ -19,7 +19,7 @@ def get_advice():
     connection = sqlite3.connect('db.sqlite')
     cursor = connection.cursor()
 
-    request = '''SELECT tasks.number, tasks.description, advices.advice, advices.image
+    request = '''SELECT tasks.number, tasks.name, advices.advice, advices.image
 FROM advices
 INNER JOIN tasks
 ON tasks.id = advices.task
