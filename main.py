@@ -20,13 +20,13 @@ def main():
 
     # application.add_handler(MessageHandler(filters.PHOTO, photo))
 
-    application.add_handler(start_handler)
-    application.add_handler(advice_handler)
-    application.add_handler(exercise_handler)
-    application.add_handler(info_handler)
-    application.add_handler(info_buttons_handler)
     application.add_handler(help_handler)
     application.add_handler(help_reply_handler)
+    application.add_handler(exercise_handler)
+    application.add_handler(start_handler)
+    application.add_handler(advice_handler)
+    application.add_handler(info_handler)
+    application.add_handler(info_buttons_handler)
     application.add_handler(other_handler)
 
     application.run_polling()
